@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Distressed Property Finder</title>
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; padding: 24px; background: #f8f8f6; color: #1a1a1a; }
+      input, select, button { font-family: inherit; padding: 7px 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; outline: none; }
+      button { cursor: pointer; background: white; }
+      button:hover { background: #f5f5f3; }
+      button:disabled { opacity: 0.5; cursor: not-allowed; }
+      /* CSS variables matching Claude.ai design system for compatibility */
+      :root {
+        --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --color-text-primary: #1a1a1a;
+        --color-text-secondary: #666;
+        --color-text-danger: #991b1b;
+        --color-background-primary: #fff;
+        --color-background-secondary: #f5f5f3;
+        --color-background-danger: #fef2f2;
+        --color-border-tertiary: rgba(0,0,0,0.12);
+        --color-border-secondary: rgba(0,0,0,0.2);
+        --border-radius-md: 8px;
+        --border-radius-lg: 12px;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --color-text-primary: #f0f0ee;
+          --color-text-secondary: #999;
+          --color-background-primary: #1e1e1c;
+          --color-background-secondary: #2a2a28;
+          --color-border-tertiary: rgba(255,255,255,0.1);
+          --color-border-secondary: rgba(255,255,255,0.2);
+        }
+        body { background: #141412; }
+        input, select, button { background: #2a2a28; color: #f0f0ee; border-color: #444; }
+        button:hover { background: #333; }
+      }
+    </style>
+    <!-- Leaflet for map view -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
